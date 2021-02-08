@@ -19,3 +19,17 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct AssignmentItem: Identifiable
+{
+    var id = UUID()
+    var priority = String()
+    var descripition = String()
+    var dueDate = Date()
+    
+@State var AssignmentItems =
+    [AssignmentItem(priority: "High", description: "Study for History Test", dueDate: Date()),
+     AssignmentItem(priority: "Medium", description: "Pick up clothes", dueDate: Date()),
+     AssignmentItem(priority: "Low", description: "Eat a donut", dueDate: Date())]
+
+}
