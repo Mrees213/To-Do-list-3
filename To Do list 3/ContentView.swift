@@ -7,48 +7,50 @@
 
 import SwiftUI
 
-class AssignmentList {
-struct ContentView: View {
-    @ObservedObject var AssignmentList = AssignmentsList()
-    var body: some View {
-        .navigationBarTitle("AssignmentList") {
-                       List {
-                        ForEach($AssignmentList.items) { Item in VStack(alignment: .leading) {
-                             Text(item.course)
+
+    struct ContentView: View {
+        @ObservedObject var AssignmentList = AssignmentsList()
+        var body: some View {
+            .navigationBarTitle("AssignmentList") {
+                List {
+                    ForEach<AssignmentsList, <#ID: Hashable#>, TupleView<(VStack<TupleView<(Text, Text)>>, Spacer, Text)>>(AssignmentList) { item in
+                     VStack(alignment: .leading) {
+                                Text(item.priority)
                                     .font(.headline)
                                 Text(item.description)
                             }
-                                Spacer()
-                            Text(Item.dueDate, style: .date)
-                                        }
-                            }
-                        .onMove(perform: { indices, newOffset in
-                            AssignmentList.Item.move(fromOffsets: indices, toOffset: newOffset)
-                        })
-                        .onDelete(perform: { indexSet in
-                            To_Do_list_3.AssignmentList.Item.remove(atOffsets: indexSet)
-                                        })
-        }
-                            .navigationBarTitle("AssignmentList")
-                        .navigationBarItems(leading: EditButton())
+                            Spacer()
+                            Text(item.dueDate, style: .date)
                         }
-                       }
+                    }
+                    .onMove(perform: { indices, newOffset in
+                        AssignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
+                    })
+                    .onDelete(perform: { indexSet in
+                        AssignmentList.items.remove(atOffsets: indexSet)
+                    })
+                }
+                .navigationBarTitle("AssignmentList")
+                .navigationBarItems(leading: EditButton())
+            }
+        }
+        
+        
+        
+        
+        struct ContentView_Previews: PreviewProvider {
+            static var previews: some View {
+                ContentView()
+            }
+        }
+        
+        struct AssignmentItem: Identifiable
+        {
+            var id = UUID()
+            var Course = String()
+            var descripition = String()
+            var dueDate = Date()
+            
+        }
 
 
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
-struct AssignmentItem: Identifiable
-{
-    var id = UUID()
-    var Course = String()
-    var descripition = String()
-    var dueDate = Date()
-    
-}
-}
