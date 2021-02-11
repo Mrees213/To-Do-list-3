@@ -6,9 +6,9 @@
 //
 
 import Foundation
-class AssignmentsList:ObservableObject {
-
-    @Published var items = [AssignmentItem( Course: "History", descripition: "Test", dueDate: Date()),
- AssignmentItem(Course: "Computer Programing", descripition: "Project", dueDate: Date()),
- AssignmentItem(Course: "Math", descripition: "Test", dueDate: Date())]
+class AssignmentList:ObservableObject {
+    
+    @Published var items = [AssignmentItem(course: "History", description: "Test", dueDate: Date()),
+                            AssignmentItem(course: "Computer Programing", description: "Project", dueDate: Date()),
+                            AssignmentItem(course: "Math", description: "Test", dueDate: Date())]
 }
