@@ -9,11 +9,9 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @ObservedObject var assignmentList = AssignmentList
+    @ObservedObject var assignmentList = AssignmentList()
     @State private var showingAddAssignmentView = false
-
-    var body: some View
-    
+    var body: some View{
         NavigationView {
             List {
                 ForEach(assignmentList.items) { item in
@@ -38,14 +36,14 @@ struct ContentView: View {
                 AddAssignmentView(assignmentList: AssignmentList)
             })
             .navigationBarTitle("AssignmentList")
-            .navigationBarItems(leading: EditButton())
             .navigationBarItems(leading: EditButton(),
-                                          trailing: Button(action: {
-                                                            showingAddAssignmentView  = true}) {
-                                              Image(systemName: "plus")
-                      })
-    
-        }
+                        trailing: Button(action: {
+                                                        showingAddAssignmentView = true}) {
+                                                                        Image(systemName: "plus")
+            
+                                    }
+            
+            )}
     }
 }
 
@@ -53,6 +51,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+    
         ContentView()
     }
 }
@@ -66,4 +65,6 @@ struct AssignmentItem: Identifiable
     
 }
 
+
+}
 

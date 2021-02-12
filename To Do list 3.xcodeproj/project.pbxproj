@@ -11,7 +11,7 @@
 		1D2077B925D1A2E80047FC8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2077B825D1A2E80047FC8A /* ContentView.swift */; };
 		1D2077BB25D1A2EE0047FC8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2077BA25D1A2EE0047FC8A /* Assets.xcassets */; };
 		1D2077BE25D1A2EE0047FC8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2077BD25D1A2EE0047FC8A /* Preview Assets.xcassets */; };
-		1D2077C725D220B90047FC8A /* To Do list file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2077C625D220B90047FC8A /* To Do list file.swift */; };
+		1D2077C725D220B90047FC8A /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2077C625D220B90047FC8A /* ToDoList.swift */; };
 		1D312D5A25D5918700D6E0D7 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D312D5925D5918700D6E0D7 /* AddAssignmentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,7 @@
 		1D2077BA25D1A2EE0047FC8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D2077BD25D1A2EE0047FC8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D2077BF25D1A2EE0047FC8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D2077C625D220B90047FC8A /* To Do list file.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "To Do list file.swift"; sourceTree = "<group>"; };
+		1D2077C625D220B90047FC8A /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		1D312D5925D5918700D6E0D7 /* AddAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +59,7 @@
 				1D2077B625D1A2E80047FC8A /* To_Do_list_3App.swift */,
 				1D312D5925D5918700D6E0D7 /* AddAssignmentView.swift */,
 				1D2077B825D1A2E80047FC8A /* ContentView.swift */,
-				1D2077C625D220B90047FC8A /* To Do list file.swift */,
+				1D2077C625D220B90047FC8A /* ToDoList.swift */,
 				1D2077BA25D1A2EE0047FC8A /* Assets.xcassets */,
 				1D2077BF25D1A2EE0047FC8A /* Info.plist */,
 				1D2077BC25D1A2EE0047FC8A /* Preview Content */,
@@ -144,7 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D2077C725D220B90047FC8A /* To Do list file.swift in Sources */,
+				1D2077C725D220B90047FC8A /* ToDoList.swift in Sources */,
 				1D2077B925D1A2E80047FC8A /* ContentView.swift in Sources */,
 				1D2077B725D1A2E80047FC8A /* To_Do_list_3App.swift in Sources */,
 				1D312D5A25D5918700D6E0D7 /* AddAssignmentView.swift in Sources */,
