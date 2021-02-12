@@ -33,7 +33,7 @@ struct ContentView: View {
                 })
             }
             .sheet(isPresented: $showingAddAssignmentView, content: {
-                AddAssignmentView(assignmentList: AssignmentList)
+                AddAssignmentView(assignmentList: AssignmentList())
             })
             .navigationBarTitle("AssignmentList")
             .navigationBarItems(leading: EditButton(),
@@ -58,6 +58,7 @@ struct ContentView_Previews: PreviewProvider {
 
 struct AssignmentItem: Identifiable
 {
+ 
     var id = UUID()
     var course = String()
     var description = String()
@@ -66,5 +67,5 @@ struct AssignmentItem: Identifiable
 }
 
 
-}
+
 

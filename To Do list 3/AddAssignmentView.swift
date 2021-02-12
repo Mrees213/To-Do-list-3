@@ -43,7 +43,7 @@ let item = AssignmentItem(id: UUID(),course: course,description: description, du
     
     struct AddAssignmentView_Previews:PreviewProvider {
         static var previews: some View {
-    AddAssignmentView(assignmentList: AssignmentList)
+    AddAssignmentView(assignmentList: AssignmentList())
         }
     }
 }
