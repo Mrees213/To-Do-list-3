@@ -22,22 +22,20 @@ struct AddAssignmentView: View {
         NavigationView {
             Form { TextField("Description", text: $description)
                 DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
-                    .sheet(isPresented: $showingAddAssignmentView, content: {
+                    .sheet(isPresented: AddAssignmentView, content: {
                                    AddAssignmentView(assignmentList = AssignmentList
                                    )
                                })
 
-                    .navigationBarTitle("Add New To-Do Item")
-                    .navigationBarItems(trailing: Button("Save") {
-                                   if priority.count > 0 && description.count > 0 {
-                                       let item = AssignmentItem(id: UUID(), priority: priority,
-                                                           description: description, dueDate: dueDate)
-                                      AddAssignment.items.append(item)
-                                       presentationMode.wrappedValue.dismiss()
-                                   }
-                               })
+                    .navigationBarTitle("Add New To-Do Assignment")
+                    .navigationBarItems(leading: EditButton(),
+                                                  trailing: Button(action: {
+                                                     showingAddAssignmentView = true}) {
+                                                      Image(systemName: "plus")
+                              })
+            
 
-                Picker("course", selection: Course) {
+                Picker("course", selection: course) {
                     ForEach(Self.Course, id: \.self) { course in
                         Text(course)
                     }
@@ -46,9 +44,9 @@ struct AddAssignmentView: View {
         }
 
 
-struct AddAssignmentView_Previews: PreviewProvider {
+struct AddAssignmentView_Previews:PreviewProvider {
     static var previews: some View {
-        AddAssignmentView(assignmentList: <#AssignmentList#>)
+        AddAssignmentView(assignmentList: )
     }
 }
     }
