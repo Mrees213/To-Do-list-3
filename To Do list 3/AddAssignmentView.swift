@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddAssignmentView: View {
     @ObservedObject var assignmentList: AssignmentList
-    @State private var showingAddAssignmentItemView = false
     @State private var course = ""
     @State private var description = ""
     @State private var dueDate = Date()
@@ -18,27 +17,27 @@ struct AddAssignmentView: View {
 //    func AddAssignmentView(assignmentList: AssignmentList())
 
     var body: some View {
-       
-        NavigationView {
-            Form { TextField("Description", text: $description)
-                DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
-                    .sheet(isPresented: AddAssignmentView, content: {
-                                   AddAssignmentView(assignmentList = AssignmentList
-                                   )
-                               })
+       NavigationView {
+            Form {
+                Picker("course", selection: $course) {
+                        ForEach(Self.courses, id: \.self) { course in Text(course)
+                                    }
+                                }
+                            
+                        
+                TextField("Description", text: $description)
+                DatePicker("Due Date", selection: $dueDate,displayedComponents: .date)
 
                     .navigationBarTitle("Add New To-Do Assignment")
-                    .navigationBarItems(leading: EditButton(),
-                                                  trailing: Button(action: {
-                                                     showingAddAssignmentView = true}) {
-                                                      Image(systemName: "plus")
-                              })
-            
+                    .navigationBarItems(trailing: Button("Save") {
+                            if course.count > 0 && description.count > 0 {
+                                    let item = AddAssignmentview(id: UUID(), course: course,
+                                                        description: description, dueDate: dueDate)
+                                        assignmentList.items.append(item)
+                                        presentationMode.wrappedValue.dismiss()
+                                    }
+                                })
 
-                Picker("course", selection: course) {
-                    ForEach(Self.Course, id: \.self) { course in
-                        Text(course)
-                    }
                 }
             }
         }
@@ -46,8 +45,9 @@ struct AddAssignmentView: View {
 
 struct AddAssignmentView_Previews:PreviewProvider {
     static var previews: some View {
-        AddAssignmentView(assignmentList: )
+        AddAssignmentView(assignmentList:AssignmentList)
     }
 }
-    }
 }
+
+
