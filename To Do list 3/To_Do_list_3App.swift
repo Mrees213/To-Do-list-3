@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct To_Do_list_3App: App {
     var body: some Scene {
-    WindowGroup<<#Content: View#>> {
+    WindowGroup {
             ContentView()
         }
     }
